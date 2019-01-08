@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "26153504016",
+    "firebase_url": "https://collegeprojectopennote.firebaseio.com",
+    "project_id": "collegeprojectopennote",
+    "storage_bucket": "collegeprojectopennote.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26153504016:android:e60aeff65cae8072",
+        "android_client_info": {
+          "package_name": "com.sourcey.materialloginexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26153504016-orps22k0jvm57nkjd3ctdek74ig72905.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQ_a9y1HO4tzv3hslRbptfFvSnzHsqA4M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
