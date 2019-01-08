@@ -35,6 +35,7 @@ dependencies {
     def appCenterSdkVersion = '1.11.0'
     implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-push:${appCenterSdkVersion}"
 
 }
 apply plugin: 'com.google.gms.google-services'

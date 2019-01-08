@@ -10,7 +10,9 @@ import android.widget.TextView;
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.analytics.Analytics;
 import com.microsoft.appcenter.crashes.Crashes;
-import com.microsoft.appcenter.AppCenter; import com.microsoft.appcenter.analytics.Analytics; import com.microsoft.appcenter.crashes.Crashes;
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics; import com.microsoft.appcenter.crashes.Crashes;
+import com.microsoft.appcenter.push.Push;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.pushlink.android.PushLink;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         AppCenter.start(getApplication(), "59803557-7793-4d90-a059-4771cab23de4",
                 Analytics.class, Crashes.class);
+        AppCenter.start(getApplication(), "59803557-7793-4d90-a059- 4771cab23de4", Push.class);
         //String yourDeviceID = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
         //PushLink.start(this, R.mipmap.ic_launcher, "j6ns2cobiife7u9l", yourDeviceID);
         TextView newtext = (TextView) findViewById(R.id.textView);
