@@ -21,6 +21,5 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="jtds-1.2.5.jtds-1.2.5" level="project" />
   </component>
 </module>

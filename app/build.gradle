@@ -9,7 +9,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 5
-        versionName "1.2.2 "
+        versionName "1.2.5"
     }
     buildTypes {
         release {
@@ -27,15 +27,17 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:11.8.0'
     implementation 'com.google.firebase:firebase-database:11.8.0'
     implementation 'com.google.firebase:firebase-core:11.8.0'
+    implementation 'com.google.firebase:firebase-config:11.8.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation files('libs/jtds-1.2.5.jar')
     implementation 'com.google.firebase:firebase-auth:16.0.4'
-    implementation "com.google.android.gms:play-services-gcm:16.0.0"
+    implementation 'com.google.android.gms:play-services-gcm:16.0.0'
     implementation 'com.pushlink:pushlink-android:5.5.3'
     def appCenterSdkVersion = '1.11.0'
     implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-push:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-distribute:${appCenterSdkVersion}"
+    implementation files('libs/volley.jar')
 }
 apply plugin: 'com.google.gms.google-services'

@@ -5,8 +5,12 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+//import android.widget.AdapterView;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,11 +21,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+
+import java.util.ArrayList;
+import java.util.List;
 //import com.google.firebase.database.DatabaseReference;
 //import com.google.firebase.database.FirebaseDatabase;
 
-public class SignupActivity extends AppCompatActivity {
-    public EditText emailId, passwd,repass, Name,department,phoneno;
+public class SignupActivity extends AppCompatActivity implements
+        AdapterView.OnItemSelectedListener {
+    public EditText emailId, passwd,repass, Name,department,phoneno,semester;
+    private Spinner spinner1, spinner2;
     Button btnSignUp;
     TextView signIn;
     FirebaseAuth firebaseAuth;
@@ -36,11 +45,30 @@ public class SignupActivity extends AppCompatActivity {
         emailId = findViewById(R.id.input_email);
         passwd = findViewById(R.id.input_password);
         Name = findViewById(R.id.input_name);
-        department = findViewById(R.id.input_dept);
+
         phoneno = findViewById(R.id.input_mobile);
         repass = findViewById(R.id.input_reEnterPassword);
         btnSignUp = findViewById(R.id.btn_signup);
         signIn = findViewById(R.id.link_login);
+        Spinner spinner = (Spinner) findViewById(R.id.input_sem);
+        List<String> sem = new ArrayList<String>();
+        sem.add("1");
+        sem.add("2");
+        sem.add("3");
+        sem.add("4");
+        sem.add("5");
+        sem.add("6");
+        Spinner spinner2 = (Spinner) findViewById(R.id.input_dept);
+        List<String> dept = new ArrayList<String>();
+        dept.add("CE");
+        dept.add("ME");
+        dept.add("CIVIL");
+        dept.add("EE");
+        dept.add("IT");
+        ArrayAdapter<String> dataAdapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, sem);
+        ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, dept);
+        spinner.setAdapter(dataAdapter1);
+        spinner.setAdapter(dataAdapter2);
         btnSignUp.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -120,6 +148,17 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id){
+        // On selecting a spinner item
+        String item = parent.getItemAtPosition(position).toString();
+    }
+    @Override
+    public void onNothingSelected(AdapterView<?> arg0) {
+        // TODO Auto-generated method stub
+    }
+
+
 }
 //import android.app.ProgressDialog;
 //import android.content.Intent;

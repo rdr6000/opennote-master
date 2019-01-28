@@ -32,22 +32,37 @@
                 android:hint="Name" />
         </android.support.design.widget.TextInputLayout>
 
-        <!-- Address Label -->
+        <!-- Department Label -->
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
 
-            <EditText
+            <Spinner
                 android:id="@+id/input_dept"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Department"
-                android:inputType="text|textPostalAddress" />
+                android:entries="@array/dept1"
+                android:prompt="@string/dept"/>
         </android.support.design.widget.TextInputLayout>
 
+        <!-- Semester Label -->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
 
+            <Spinner
+                android:id="@+id/input_sem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Semester"
+                android:entries="@array/sem1"
+                android:prompt="@string/sem"/>
+        </android.support.design.widget.TextInputLayout>
 
         <!--  Email Label -->
         <android.support.design.widget.TextInputLayout

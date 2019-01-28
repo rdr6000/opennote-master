@@ -3,4 +3,11 @@
 
     <!--<string name="hello_world">Hello world!</string>-->
     <string name="action_settings">Logout</string>
+
+    <string name="sem">Select Semester</string>
+
+
+
+    <string name="dept">Select Department</string>
+
 </resources>

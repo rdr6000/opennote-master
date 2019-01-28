@@ -1,22 +1,19 @@
 package com.sourcey.materiallogindemo;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import com.microsoft.appcenter.AppCenter;
-import com.microsoft.appcenter.analytics.Analytics;
-import com.microsoft.appcenter.crashes.Crashes;
-import com.microsoft.appcenter.AppCenter;
-import com.microsoft.appcenter.analytics.Analytics; import com.microsoft.appcenter.crashes.Crashes;
-import com.microsoft.appcenter.push.Push;
-import com.microsoft.appcenter.distribute.Distribute;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.pushlink.android.PushLink;
+
 
 
 public class MainActivity extends AppCompatActivity {
@@ -26,29 +23,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        AppCenter.start(getApplication(), "59803557-7793-4d90-a059-4771cab23de4",
-                Analytics.class, Crashes.class);
-        AppCenter.start(getApplication(), "59803557-7793-4d90-a059- 4771cab23de4", Push.class);
-        AppCenter.start(getApplication(), "59803557-7793-4d90-a059- 4771cab23de4", Distribute.class);
-        //String yourDeviceID = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
-        //PushLink.start(this, R.mipmap.ic_launcher, "j6ns2cobiife7u9l", yourDeviceID);
+        Intent intent1 = new Intent(MainActivity.this, UpdateService.class);
+        startService(intent1);
         TextView newtext = (TextView) findViewById(R.id.textView);
         firebaseAuth = FirebaseAuth.getInstance();
-        if(firebaseAuth.getCurrentUser()==null){
+        if (firebaseAuth.getCurrentUser() == null) {
             Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-        }
-        else {
+            startActivity(intent);
+        } else {
             FirebaseUser user = firebaseAuth.getCurrentUser();
             String displayName;
             if (user.getDisplayName() != null) {
-                displayName = "Hello, " +user.getDisplayName().toString();
+                displayName = "Hello, " + user.getDisplayName().toString();
                 newtext.setText(displayName);
             } else
                 newtext.setText("Hello, user");
         }
 //        Intent intent = new Intent(this, LoginActivity.class);
 //        startActivity(intent);
+
     }
 
     @Override
@@ -75,5 +68,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
     }
+
 }
+
+
 
